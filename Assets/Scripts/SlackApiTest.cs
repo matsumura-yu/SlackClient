@@ -4,17 +4,20 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
-public class SlackApiTest : MonoBehaviour {
+public class SlackApiTest : MonoBehaviour
+{
 
     ApplicationConfigs Env;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         Env = new ApplicationConfigs();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (Input.GetKeyDown(KeyCode.G))
         {
             Debug.Log("ChannelListの取得");
@@ -113,5 +116,52 @@ public class SlackApiTest : MonoBehaviour {
 
     }
 
+    //Getしたチャンネルリストのクラス
+    //編集>形式を選択肢て貼り付け> Jsonを行うと自動生成できる
 
+    /*
+    public class Rootobject
+    {
+        public bool ok { get; set; }
+        public Channel[] channels { get; set; }
+    }
+
+    public class Channel
+    {
+        public string id { get; set; }
+        public string name { get; set; }
+        public bool is_channel { get; set; }
+        public int created { get; set; }
+        public bool is_archived { get; set; }
+        public bool is_general { get; set; }
+        public int unlinked { get; set; }
+        public string creator { get; set; }
+        public string name_normalized { get; set; }
+        public bool is_shared { get; set; }
+        public bool is_org_shared { get; set; }
+        public bool is_member { get; set; }
+        public bool is_private { get; set; }
+        public bool is_mpim { get; set; }
+        public string[] members { get; set; }
+        public Topic topic { get; set; }
+        public Purpose purpose { get; set; }
+        public string[] previous_names { get; set; }
+        public int num_members { get; set; }
+    }
+
+    public class Topic
+    {
+        public string value { get; set; }
+        public string creator { get; set; }
+        public int last_set { get; set; }
+    }
+
+    public class Purpose
+    {
+        public string value { get; set; }
+        public string creator { get; set; }
+        public int last_set { get; set; }
+    }
+
+    */
 }
