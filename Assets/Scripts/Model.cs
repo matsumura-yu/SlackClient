@@ -52,7 +52,7 @@ public class Model : MonoBehaviour{
             coroutine = Observable.FromCoroutine<string>(observer => SlackPost(observer, text));
             //.Subscribe(_ => Debug.Log(_)); これはだめ
             coroutine.Subscribe(_ => Debug.Log(_));
-            
+       
         //}
 
 
